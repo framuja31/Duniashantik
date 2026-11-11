@@ -1,0 +1,117 @@
+/* SHANTIK V9 | ORGANIC ROMANTIC SCRAPBOOK | Cover-only design layer
+   Intentionally leaves dialog, Adaptive Photo Viewer B, media and animation untouched.
+   Breakpoints: desktop expressive asymmetry; tablet flexible; phone two-column diary. */
+#gallery .memory-scrapbook {
+  background:linear-gradient(153deg,rgba(255,253,249,.96),rgba(255,242,246,.94) 48%,rgba(255,252,247,.98));
+}
+#gallery .memory-albums {
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  align-items:start;grid-auto-flow:row;column-gap:clamp(15px,1.8vw,26px);
+  row-gap:38px;padding:54px 12px 44px;overflow:visible;
+}
+#gallery .memory-album {min-width:0;grid-column:span 4;margin-top:0;transition:transform .28s ease,filter .28s ease;}
+#gallery .memory-album[data-album-card="birthday"] {grid-column:span 5;--album-tilt:-1.8deg;}
+#gallery .memory-album[data-album-card="batu"] {grid-column:span 3;--album-tilt:2.5deg;margin-top:45px;}
+#gallery .memory-album[data-album-card="cilegon"] {grid-column:span 4;--album-tilt:-1.25deg;margin-top:19px;}
+#gallery .memory-album[data-album-card="double"] {grid-column:span 4;--album-tilt:1.4deg;margin-top:16px;}
+#gallery .memory-album[data-album-card="wallpaper"] {grid-column:span 4;--album-tilt:-1.7deg;margin-top:49px;}
+#gallery .memory-album[data-album-card="sunflower"] {grid-column:span 4;--album-tilt:1.2deg;margin-top:13px;}
+#gallery .memory-album[data-album-card="skincare"] {grid-column:span 3;--album-tilt:2.2deg;margin-top:34px;}
+#gallery .memory-album[data-album-card="coffee"] {grid-column:span 4;--album-tilt:-1.75deg;margin-top:5px;}
+#gallery .memory-album[data-album-card="birthdayfriend"] {grid-column:span 5;--album-tilt:.9deg;margin-top:18px;}
+/* Variable photo-stage dimensions; artistic crop applies only to gallery covers. */
+#gallery .memory-album[data-album-card="birthday"] .memory-photo-stage {height:308px;}
+#gallery .memory-album[data-album-card="batu"] .memory-photo-stage {height:206px;}
+#gallery .memory-album[data-album-card="cilegon"] .memory-photo-stage {height:280px;}
+#gallery .memory-album[data-album-card="double"] .memory-photo-stage {height:263px;}
+#gallery .memory-album[data-album-card="wallpaper"] .memory-photo-stage {height:283px;}
+#gallery .memory-album[data-album-card="sunflower"] .memory-photo-stage {height:245px;}
+#gallery .memory-album[data-album-card="skincare"] .memory-photo-stage {height:245px;}
+#gallery .memory-album[data-album-card="coffee"] .memory-photo-stage {height:270px;}
+#gallery .memory-album[data-album-card="birthdayfriend"] .memory-photo-stage {height:314px;}
+#gallery .memory-album-open {position:relative;}
+/* Washi tape is attached at different angles without modifying photo sources. */
+#gallery .memory-album:nth-child(3n+2) .memory-album-open:before {left:31%;width:65px;background:rgba(218,232,212,.90);transform:translateX(-50%) rotate(8deg);}
+#gallery .memory-album:nth-child(3n) .memory-album-open:before {left:66%;width:76px;background:rgba(228,212,237,.87);transform:translateX(-50%) rotate(-8deg);}
+#gallery .memory-album:nth-child(4n+1) .memory-album-open:before {background:rgba(243,209,214,.88);}
+#gallery .memory-album:nth-child(4n+2) .memory-album-open {box-shadow:4px 8px 0 #e9dfd4,0 13px 24px rgba(101,52,69,.12);}
+#gallery .memory-album:nth-child(3n) .memory-album-open {box-shadow:2px 7px 0 #e6dce9,0 13px 24px rgba(101,52,69,.13);}
+#gallery .memory-album[data-album-card="birthdayfriend"] .memory-album-open {background:#fffdf9;border-color:#eec6d4;}
+#gallery .memory-album[data-album-card="birthdayfriend"] .memory-paper-tag {color:#ac5974;}
+#gallery .memory-album[data-album-card="sunflower"] .memory-album-open {background:#fffdf6;}
+#gallery .memory-album[data-album-card="birthday"] .memory-album-open {background:#fffafc;}
+#gallery .memory-album-title {font-size:clamp(1.1rem,1.6vw,1.52rem);}
+@media(hover:hover){
+  #gallery .memory-album:hover {transform:translateY(-7px) rotate(calc(var(--album-tilt) * .35));z-index:6;}
+}
+/* Tablet: balanced two-column layout, avoiding narrow album titles. */
+@media (min-width:681px) and (max-width:1050px){
+  #gallery .memory-albums {grid-template-columns:repeat(6,minmax(0,1fr));column-gap:24px;row-gap:32px;padding:52px 13px 36px;}
+  #gallery .memory-album[data-album-card] {grid-column:span 3;margin-top:0;}
+  #gallery .memory-album[data-album-card="birthday"],
+  #gallery .memory-album[data-album-card="sunflower"],
+  #gallery .memory-album[data-album-card="birthdayfriend"]{grid-column:span 6;}
+  #gallery .memory-album[data-album-card="birthday"] .memory-photo-stage,
+  #gallery .memory-album[data-album-card="birthdayfriend"] .memory-photo-stage{height:305px;}
+}
+/* Mobile: two-column responsive collage instead of horizontal cards. */
+@media(max-width:680px){
+  #gallery .memory-albums {
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px 13px;overflow:visible;scroll-snap-type:none;
+    padding:46px 16px 35px;scroll-padding:0;
+  }
+  #gallery .memory-album[data-album-card] {
+    min-width:0;width:auto;flex:none;grid-column:span 1;
+    margin:0;scroll-snap-align:none;
+    transform:rotate(var(--album-tilt));
+  }
+  #gallery .memory-album[data-album-card="birthday"],
+  #gallery .memory-album[data-album-card="sunflower"],
+  #gallery .memory-album[data-album-card="birthdayfriend"] {grid-column:span 2;}
+  #gallery .memory-album[data-album-card="batu"]{margin-top:17px;--album-tilt:1.6deg;}
+  #gallery .memory-album[data-album-card="double"]{margin-top:12px;--album-tilt:1.15deg;}
+  #gallery .memory-album[data-album-card="wallpaper"]{margin-top:8px;--album-tilt:-1deg;}
+  #gallery .memory-album[data-album-card="skincare"]{margin-top:9px;--album-tilt:1.5deg;}
+  #gallery .memory-album-open {padding:9px 8px 11px;}
+  #gallery .memory-paper-top {gap:2px;margin-bottom:6px;min-height:17px;}
+  #gallery .memory-paper-number {font-size:.56rem;letter-spacing:.09em;}
+  #gallery .memory-paper-tag {font-size:.66rem;}
+  #gallery .memory-album-details {padding:10px 2px 0;min-height:0;}
+  #gallery .memory-album-title {font-size:clamp(.94rem,3.5vw,1.24rem);line-height:1.2;margin:6px 0 6px;overflow-wrap:anywhere;}
+  #gallery .memory-album-date {font-size:.55rem;letter-spacing:.04em;}
+  #gallery .memory-album-mood {font-size:.68rem;}
+  #gallery .memory-album-footer {display:block;margin-top:10px;padding-top:8px;}
+  #gallery .memory-album-count {display:block;font-size:.61rem;white-space:normal;}
+  #gallery .memory-album-cta {display:block;font-size:.65rem;margin-top:5px;}
+  #gallery .memory-album[data-album-card="birthday"] .memory-photo-stage {height:265px;}
+  #gallery .memory-album[data-album-card="sunflower"] .memory-photo-stage {height:245px;}
+  #gallery .memory-album[data-album-card="birthdayfriend"] .memory-photo-stage {height:255px;}
+  #gallery .memory-album[data-album-card="batu"] .memory-photo-stage {height:156px;}
+  #gallery .memory-album[data-album-card="cilegon"] .memory-photo-stage {height:176px;}
+  #gallery .memory-album[data-album-card="double"] .memory-photo-stage {height:166px;}
+  #gallery .memory-album[data-album-card="wallpaper"] .memory-photo-stage {height:185px;}
+  #gallery .memory-album[data-album-card="skincare"] .memory-photo-stage {height:176px;}
+  #gallery .memory-album[data-album-card="coffee"] .memory-photo-stage {height:181px;}
+  #gallery .memory-photo-main,#gallery .memory-photo-second {padding:3px 3px 10px;}
+  /* Preserve chibi triggers but reduce sticker crowding in half-width cards. */
+  #gallery .memory-album[data-album-card="wallpaper"]>.gallery-chibi {--sticker-width:58px;top:-30px;right:0;}
+  #gallery .memory-album[data-album-card="skincare"]>.skincare-cover-trigger {
+    --sticker-width:76px;top:calc(224px - var(--sticker-width));right:-4px;
+  }
+  #gallery .memory-album[data-album-card="sunflower"]>.sunflower-cover-trigger {
+    --sticker-width:112px;top:calc(296px - 1.2496 * var(--sticker-width));right:-4px;
+  }
+  #gallery .memory-album[data-album-card="birthday"]>.gallery-chibi {--sticker-width:77px;top:-47px;}
+  #gallery .memory-swipe-hint {display:none;}
+  #gallery .memory-photo-scribble {font-size:1.8rem;}
+}
+@media(max-width:370px){
+  #gallery .memory-albums{gap:21px 10px;padding:42px 12px 28px;}
+  #gallery .memory-album[data-album-card]{width:auto;flex:none;}
+  #gallery .memory-album-title {font-size:.92rem;}
+  #gallery .memory-album[data-album-card="sunflower"]>.sunflower-cover-trigger{--sticker-width:98px;top:calc(279px - 1.2496 * var(--sticker-width));}
+}
+@media(prefers-reduced-motion:reduce){
+ #gallery .memory-album{transition:none!important;}
+}

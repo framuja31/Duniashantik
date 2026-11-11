@@ -1,0 +1,1 @@
+Album 6: transparent cutout on gallery cover positioned like Album 1, subtle CSS hover/idle; original 24-frame GIF only in opened album with replay. All six albums retain Standard B no-crop. No Netlify deployment.

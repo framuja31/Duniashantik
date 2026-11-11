@@ -1,0 +1,27 @@
+MASTER UI UPDATE V4 — QA SUMMARY
+Date: 2026-11-08
+Base: Original Shantik Pink Diary Motion V3
+Build: CSS override + small standalone mobile menu JS + Hero wrapper
+
+STATIC REGRESSION
+- Original inline script is identical to V3: PASS
+- Original DOM IDs all preserved: PASS
+- 10 gallery cards (9 photos, 1 video) preserved: PASS
+- 100% original assets retained: PASS
+- No Timeline introduced: PASS
+
+LOCAL BROWSER TEST (Chromium headless; local asset routes)
+Widths tested: 320, 375, 390, 412, 560, 768, 1024, 1440 px
+- Horizontal document overflow: NONE at tested widths
+- Uncaught JavaScript errors: NONE
+- Day counter on 2026-11-08: 130 days
+- Mobile menu opens and closes: PASS at <=760 px
+- Mood choice, Surprise Machine, Open When, Love Letter, Final Surprise, Chibi Assistant: PASS at 390 px
+- First gallery photo visible in scrolled viewport: PASS
+- Existing MP4 video codecs: h264 video + AAC audio (all three files)
+- Actual audio playback on physical phone: NOT VERIFIED
+- Video frame progression on physical phone: NOT VERIFIED
+- Safari iPhone native: NOT VERIFIED
+- Lighthouse web performance metrics: NOT VERIFIED
+
+Deployment state: NOT DEPLOYED; production remains unchanged.

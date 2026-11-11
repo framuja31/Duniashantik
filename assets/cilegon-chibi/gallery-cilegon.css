@@ -1,0 +1,6 @@
+/* Shantik Album 3 — 24-frame chibi ONLY inside its open album, no gallery cover overlay. */
+#gallery .cilegon-animation-panel[hidden]{display:none!important}
+#gallery .cilegon-animation-panel{margin-bottom:18px}
+#gallery .cilegon-animation-sprite{width:min(210px,100%);aspect-ratio:1;flex:none;background-image:url('cilegon-chibi-24.png');background-size:600% 400%;background-position:0% 0%;background-repeat:no-repeat;will-change:background-position}
+@media(max-width:680px){#gallery .cilegon-animation-panel{margin-bottom:10px}#gallery .cilegon-animation-sprite{width:166px}}
+@media(prefers-reduced-motion:reduce){#gallery .cilegon-animation-sprite{will-change:auto}}

@@ -1,0 +1,35 @@
+OUR LOVE STORY — SHANTIK / TAHAP 6 QA
+Tanggal: 2026-11-08
+
+SOURCE
+- Our_Love_Story_Shantik_Master_UI_V4_Netlify.zip
+- 185 original entries besides index.html preserved byte-for-byte.
+- Only index.html changed in original entries; 6 new media/code assets added.
+
+VIDEO
+- Intro: 1280x720, H.264, 24fps, 5.0417 seconds, muted/no audio, hearts effect baked in.
+- Idle: 1280x720, H.264, 24fps, 5.5833 seconds, muted/no audio.
+- Approximate intro->idle frame seam difference: 2.22 mean absolute pixel values (0-255) in representative ROI at 640x360.
+- Approximate idle end->start seam difference: 1.93 mean absolute pixel values (0-255) in representative ROI at 640x360.
+- Both video files decoded successfully for full duration.
+
+LOGIC SIMULATION PASS
+- Lazy loading when counter enters viewport.
+- Intro playback then Idle loop.
+- Tap replay resets Intro and pauses Idle.
+- Pause/resume on viewport visibility.
+- Pause/resume on document visibility.
+- Reduced motion uses static poster and disables video playback.
+- JavaScript syntax validation passed.
+
+STATIC CHECK PASS
+- No missing local image, video, stylesheet, or script references.
+- 12 gallery entries preserved.
+- Relationship date text remains 1 Juli 2026.
+- Other site features and original media preserved.
+- No timeline section introduced.
+
+NOT YET VERIFIED
+- Actual Safari iPhone and Android Chrome playback.
+- Full browser visual regression and performance on physical devices.
+- Online Netlify deployment (intentionally not performed).

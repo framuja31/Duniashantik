@@ -1,0 +1,6 @@
+/* Album 4 — 24-frame gaming chibi, only inside opened album. */
+#gallery .double-animation-panel[hidden]{display:none!important}
+#gallery .double-animation-panel{margin-bottom:18px}
+#gallery .double-animation-sprite{width:min(210px,100%);aspect-ratio:1;flex:none;background-image:url('double-date-gaming-24.png');background-size:600% 400%;background-position:0 0;background-repeat:no-repeat;will-change:background-position}
+@media(max-width:680px){#gallery .double-animation-panel{margin-bottom:10px}#gallery .double-animation-sprite{width:166px}}
+@media(prefers-reduced-motion:reduce){#gallery .double-animation-sprite{will-change:auto}}

@@ -1,0 +1,1 @@
+Koreksi: HANYA posisi chibi di sampul Album 6 dipindah ke tepi bawah bingkai foto dengan kaki sedikit melewati frame. Ukuran asli tetap identik: clamp(138px,37%,168px), mobile 112px, layar kecil 98px. Tidak ada perubahan foto, teks, fitur, GIF di dalam album, dan tidak ada deployment.

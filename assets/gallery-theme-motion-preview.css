@@ -1,0 +1,35 @@
+/* Gallery-only thematic chibi motion preview — Pink Love Diary preserved. */
+#gallery .memory-album>.gallery-chibi {overflow:visible;isolation:isolate;}
+#gallery .gallery-chibi>.gallery-theme-sticker {position:absolute;display:block;pointer-events:none;width:53px;height:53px;left:-31px;top:-18px;z-index:3;transform:rotate(-10deg);filter:drop-shadow(0 3px 5px rgba(106,64,79,.14));}
+#gallery .gallery-theme-icon {display:block;width:100%;height:100%;background-position:center;background-size:contain;background-repeat:no-repeat;transform-origin:center;animation:shantik-theme-float 4s ease-in-out infinite;}
+#gallery .gallery-theme-spark {position:absolute;top:-8px;right:-4px;color:#d68eaa;font-size:16px;line-height:1;opacity:.8;animation:shantik-theme-spark 3s ease-in-out infinite;}
+#gallery .gallery-theme-birthday .gallery-theme-icon {background-image:url('gallery-scenes/birthday.svg');}
+#gallery .gallery-theme-batu .gallery-theme-icon {background-image:url('gallery-scenes/batu.svg');}
+#gallery .gallery-theme-cilegon .gallery-theme-icon {background-image:url('gallery-scenes/cilegon.svg');}
+#gallery .gallery-theme-double .gallery-theme-icon {background-image:url('gallery-scenes/double.svg');}
+#gallery .gallery-theme-wallpaper .gallery-theme-icon {background-image:url('gallery-scenes/wallpaper.svg');}
+#gallery .memory-album-batu .gallery-theme-sticker {left:-35px;top:-16px;width:62px;height:62px;transform:rotate(4deg);}
+#gallery .memory-album-cilegon .gallery-theme-sticker {left:-45px;top:-13px;width:63px;height:63px;transform:rotate(-3deg);}
+#gallery .memory-album-double .gallery-theme-sticker {left:-32px;top:-18px;transform:rotate(11deg);}
+#gallery .memory-album-wallpaper .gallery-theme-sticker {left:-33px;top:-17px;width:59px;height:59px;transform:rotate(7deg);}
+#gallery .gallery-chibi.is-playing .gallery-theme-icon {animation:shantik-theme-pop .47s ease-in-out 3;}
+#gallery .gallery-chibi.is-playing .gallery-theme-spark {animation:shantik-theme-burst .6s ease-out 3;}
+#gallery .memory-album-batu .gallery-chibi.is-playing .gallery-theme-icon {animation:shantik-theme-journey .85s ease-in-out 2;}
+#gallery .memory-album-cilegon .gallery-chibi.is-playing .gallery-theme-icon {animation:shantik-theme-drive .83s ease-in-out 2;}
+#gallery .memory-album-double .gallery-chibi.is-playing .gallery-theme-icon {animation:shantik-theme-play .42s ease-in-out 4;}
+#gallery .memory-album-wallpaper .gallery-chibi.is-playing .gallery-theme-icon {animation:shantik-theme-roll .85s ease-in-out 2;}
+@keyframes shantik-theme-float {0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes shantik-theme-spark {0%,100%{opacity:.25;transform:scale(.75) rotate(-15deg)}50%{opacity:.95;transform:scale(1.15) rotate(15deg)}}
+@keyframes shantik-theme-pop {0%,100%{transform:scale(1)}40%{transform:scale(1.16) rotate(-7deg)}70%{transform:scale(.97) rotate(4deg)}}
+@keyframes shantik-theme-burst {0%{opacity:.3;transform:scale(.6) translateY(3px)}55%{opacity:1;transform:scale(1.45) translateY(-8px)}100%{opacity:0;transform:scale(1.2) translateY(-13px)}}
+@keyframes shantik-theme-journey {0%,100%{transform:translateX(0)}50%{transform:translateX(7px) translateY(-4px)}}
+@keyframes shantik-theme-drive {0%,100%{transform:translateX(-4px) rotate(-2deg)}50%{transform:translateX(8px) rotate(2deg)}}
+@keyframes shantik-theme-play {0%,100%{transform:rotate(-7deg)}50%{transform:rotate(13deg) scale(1.08)}}
+@keyframes shantik-theme-roll {0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg) translateY(-5px)}}
+@media(max-width:680px){
+ #gallery .gallery-chibi>.gallery-theme-sticker {width:43px;height:43px;left:-27px;top:-14px;}
+ #gallery .memory-album-batu .gallery-theme-sticker,#gallery .memory-album-cilegon .gallery-theme-sticker,#gallery .memory-album-wallpaper .gallery-theme-sticker {width:48px;height:48px;left:-29px;top:-14px;}
+}
+@media(prefers-reduced-motion:reduce){
+ #gallery .gallery-theme-icon,#gallery .gallery-theme-spark,#gallery .gallery-chibi.is-playing .gallery-theme-icon,#gallery .gallery-chibi.is-playing .gallery-theme-spark{animation:none!important;}
+}

@@ -1,0 +1,90 @@
+/* Shantik Stage 6 — scoped video upgrade for the relationship counter only. */
+.counter-motion-video {
+  width: min(100%, 450px);
+  min-height: 0;
+  margin: 24px auto -7px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+.counter-motion-video::after { display: none; }
+.counter-motion-video .counter-motion-tap {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  padding: 6px;
+  border: 1px solid #efcbd8;
+  border-radius: 22px;
+  background: linear-gradient(140deg,#fffdfb,#fbe8ef);
+  box-shadow: 0 9px 26px rgba(141,78,101,.12), inset 0 0 0 1px rgba(255,255,255,.6);
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.counter-motion-video .counter-motion-tap:hover { border-color: #e6afc2; }
+.counter-motion-video .counter-motion-tap:focus-visible {
+  outline: 3px solid #a94d70;
+  outline-offset: 4px;
+}
+.counter-video-stage {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 17px;
+  background: #f9e8ed;
+}
+.counter-video-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.6), inset 0 -15px 23px rgba(255,245,249,.11);
+}
+.counter-video-stage .counter-video,
+.counter-video-stage .counter-video-still {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: none;
+  pointer-events: none;
+}
+.counter-video-stage .counter-video-still { z-index: 1; opacity: 1; transition: opacity .16s ease; }
+.counter-video-stage .counter-video { z-index: 2; opacity: 0; transition: opacity .16s ease; }
+.counter-video-stage .counter-video-idle { z-index: 3; }
+.counter-video-stage[data-phase="intro"] .counter-video-intro { opacity: 1; }
+.counter-video-stage[data-phase="idle"] .counter-video-idle { opacity: 1; }
+.counter-video-stage[data-phase="intro"] .counter-video-still,
+.counter-video-stage[data-phase="idle"] .counter-video-still { opacity: 0; }
+.counter-motion-video .counter-motion-caption {
+  display: block;
+  min-height: 21px;
+  margin: 0;
+  color: #955c74;
+  font-size: .78rem;
+  line-height: 1.45;
+  text-align: center;
+}
+.counter-motion-video .counter-motion-tap:disabled { cursor: default; opacity: 1; }
+@media (max-width: 600px) {
+  .counter-motion-video { margin: 20px auto -4px; gap: 9px; }
+  .counter-motion-video .counter-motion-tap { padding: 5px; border-radius: 18px; }
+  .counter-video-stage { aspect-ratio: 4 / 3; border-radius: 13px; }
+  .counter-motion-video .counter-motion-caption { font-size: .72rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .counter-video-stage .counter-video,
+  .counter-video-stage .counter-video-still { transition: none !important; }
+}

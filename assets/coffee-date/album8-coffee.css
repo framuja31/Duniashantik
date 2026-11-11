@@ -1,0 +1,14 @@
+/* Album 8: Coffee Date cover; original photographs stay no-crop in Standard B modal. */
+#gallery .memory-album-coffee {--album-tilt:-1deg;margin-top:3px;}
+#gallery .memory-album-coffee .memory-album-open:before {background:#e5c9d1;}
+#gallery .memory-album-coffee .memory-photo-stage {background:linear-gradient(150deg,#fce7e9,#f8e4d9 72%,#fff2eb);}
+#gallery .memory-album-coffee .memory-photo-main {left:6%;top:6%;width:72%;height:87%;transform:rotate(-4deg);}
+#gallery .memory-album-coffee .memory-photo-second {right:0%;bottom:5%;width:42%;height:63%;transform:rotate(7deg);}
+#gallery .memory-album-coffee .memory-photo-main img {object-position:50% 32%;}
+#gallery .memory-album-coffee .memory-photo-second img {object-position:50% 45%;}
+#gallery .memory-album-coffee .memory-photo-scribble {color:#cc8795;}
+@media(hover:hover){#gallery .memory-album-coffee:hover .memory-photo-main{transform:rotate(-6deg) translate(-3px,-3px);}#gallery .memory-album-coffee:hover .memory-photo-second{transform:rotate(9deg) translate(2px,-3px);}}
+#gallery .coffee-animation-panel[hidden]{display:none!important;}
+#gallery .coffee-animation-scene{min-height:222px;display:flex;align-items:center;justify-content:center;}
+#gallery .coffee-animation-gif{display:block;width:214px;height:214px;max-width:100%;object-fit:contain;border-radius:13px;background:#f2d8d6;box-shadow:0 6px 16px rgba(88,46,65,.12);}
+@media(max-width:680px){#gallery .coffee-animation-scene{min-height:174px;}#gallery .coffee-animation-gif{width:165px;height:165px;}}
